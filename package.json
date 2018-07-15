@@ -32,7 +32,10 @@
         "tsConfigFile": "tsconfig.json"
       }
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "watchPathIgnorePatterns": [
+      "dist"
+    ]
   },
   "dependencies": {
     "cosmiconfig": "^5.0.5",

@@ -28,12 +28,36 @@ export const createRollupConfig = (dir: string): RollupConfig => ({
   input: 'virtual-module',
   output: {
     file: join(dir, 'dist', 'bundle.js'),
+    name: 'Bundle',
     format: 'iife',
   },
   plugins: [virtualResolver(virtualModuleLoader)],
 })
 
+virtualModuleLoader.registerModule('virtual-module', 'console.log("hello")')
+
+type RollupWatchEvent =
+  | {
+      code:
+        | 'START' /** the watcher is (re)starting */
+        | 'BUNDLE_START' /** building an individual bundle */
+        | 'BUNDLE_END' /** finished building a bundle */
+        | 'END' /** finished building all bundles */
+    }
+  | {
+      code:
+        | 'ERROR' /** encountered an error while bundling */
+        | 'FATAL' /** encountered an unrecoverable error */
+      error: Error
+    }
+
 export const start = () => {
   const watcher = watch([createRollupConfig(process.cwd())])
-  watcher.on('event', event => console.log(event))
+  watcher.on('event', (event: RollupWatchEvent) => {
+    if (event.code === 'FATAL') {
+      throw event.error
+    }
+    console.log(event)
+  })
+  // run watcher._makeDirty() to trigger rebuild
 }

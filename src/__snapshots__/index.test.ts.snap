@@ -6,6 +6,7 @@ Object {
   "output": Object {
     "file": "dist/bundle.js",
     "format": "iife",
+    "name": "Bundle",
   },
   "plugins": Array [
     Object {
