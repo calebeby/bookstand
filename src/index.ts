@@ -36,6 +36,12 @@ export const createRollupConfig = (dir: string): RollupConfig => ({
 
 virtualModuleLoader.registerModule('virtual-module', 'console.log("hello")')
 
+declare module 'rollup' {
+  export interface Watcher {
+    _makeDirty: () => void
+  }
+}
+
 type RollupWatchEvent =
   | {
       code:
@@ -59,5 +65,5 @@ export const start = () => {
     }
     console.log(event)
   })
-  // run watcher._makeDirty() to trigger rebuild
+  virtualModuleLoader.onChange(() => watcher._makeDirty())
 }
