@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createRollupConfig should match snapshot 1`] = `
+Object {
+  "input": "virtual-module",
+  "output": Object {
+    "file": "dist/bundle.js",
+    "format": "iife",
+  },
+  "plugins": Array [
+    Object {
+      "load": [Function],
+      "name": "rollup-plugin-virtual-resolver",
+    },
+  ],
+}
+`;
