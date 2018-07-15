@@ -6,5 +6,6 @@ const virtualResolver = (
 ): Plugin => ({
   name: 'rollup-plugin-virtual-resolver',
   load: virtualModuleLoader.moduleLoader,
+  resolveId: virtualModuleLoader.resolver,
 })
 export default virtualResolver

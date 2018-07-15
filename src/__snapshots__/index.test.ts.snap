@@ -11,6 +11,7 @@ Object {
     Object {
       "load": [Function],
       "name": "rollup-plugin-virtual-resolver",
+      "resolveId": [Function],
     },
   ],
 }

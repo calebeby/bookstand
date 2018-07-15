@@ -1,4 +1,4 @@
-import { createRollupConfig } from '.'
+import { createRollupConfig, start } from '.'
 
 // const groups = {
 //   groups: [
@@ -41,5 +41,11 @@ import { createRollupConfig } from '.'
 describe('createRollupConfig', () => {
   it('should match snapshot', () => {
     expect(createRollupConfig('')).toMatchSnapshot()
+  })
+})
+
+describe('start', () => {
+  it('should create a bundle', () => {
+    start()
   })
 })

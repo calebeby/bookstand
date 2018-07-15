@@ -16,6 +16,9 @@ class VirtualModuleProvider {
     }
     return virtualModule
   }
+
+  resolver = (id: string): string | null =>
+    this.modules[id] !== undefined ? id : null
 }
 
 export default VirtualModuleProvider

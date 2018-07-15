@@ -33,6 +33,7 @@ export const createRollupConfig = (dir: string): RollupConfig => ({
   plugins: [virtualResolver(virtualModuleLoader)],
 })
 
-const start = () => {
+export const start = () => {
   const watcher = watch([createRollupConfig(process.cwd())])
+  watcher.on('event', event => console.log(event))
 }
