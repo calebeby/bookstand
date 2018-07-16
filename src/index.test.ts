@@ -40,12 +40,22 @@ import { createRollupConfig, start } from '.'
 
 describe('createRollupConfig', () => {
   it('should match snapshot', () => {
-    expect(createRollupConfig('')).toMatchSnapshot()
-  })
-})
-
-describe('start', () => {
-  it('should create a bundle', () => {
-    start()
+    expect(createRollupConfig('')).toMatchInlineSnapshot(`
+Object {
+  "input": "virtual-module",
+  "output": Object {
+    "file": "dist/bundle.js",
+    "format": "iife",
+    "name": "Bundle",
+  },
+  "plugins": Array [
+    Object {
+      "load": [Function],
+      "name": "rollup-plugin-virtual-resolver",
+      "resolveId": [Function],
+    },
+  ],
+}
+`)
   })
 })

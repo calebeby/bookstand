@@ -38,7 +38,7 @@ virtualModuleLoader.registerModule('virtual-module', 'console.log("hello")')
 
 declare module 'rollup' {
   export interface Watcher {
-    _makeDirty: () => void
+    invalidate: () => void
   }
 }
 
@@ -65,5 +65,5 @@ export const start = () => {
     }
     console.log(event)
   })
-  virtualModuleLoader.onChange(() => watcher._makeDirty())
+  virtualModuleLoader.onChange(() => watcher.invalidate())
 }
