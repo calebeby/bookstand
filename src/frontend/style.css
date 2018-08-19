@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: [sidebar] calc(9em + 5vw) [main] 1fr;
+  grid-template-rows: [main] 100vh;
+  grid-template-areas: 'sidebar main';
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: [main] 1fr;
+    grid-template-areas: 'main';
+  }
+
+  & > aside {
+    grid-area: sidebar;
+    background: #333;
+    color: white;
+    @media screen and (max-width: 500px) {
+      position: fixed;
+      right: 100%;
+    }
+  }
+
+  & > main {
+    grid-area: main;
+    background: #bbb;
+  }
+}
