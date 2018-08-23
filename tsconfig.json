@@ -8,6 +8,6 @@
     "noUnusedParameters": true,
     "esModuleInterop": true
   },
-  "include": ["src/builder/**/*.ts"],
+  "include": ["src/builder/**/*.ts", "types.d.ts"],
   "exclude": ["**/*.test.ts"]
 }
