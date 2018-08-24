@@ -22,7 +22,7 @@ const findPatternsMatchingConfig = async (
       return (await existsAsync(join(cwd, readmePath))) ? readmePath : false
     }),
   )
-  return matchingDirectories.filter(p => p !== false)
+  return matchingDirectories.filter((p): p is string => p !== false)
 }
 
 const findPatterns = async (cwd = process.cwd()) => {
