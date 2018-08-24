@@ -1,6 +1,7 @@
 import MarkdownIt from 'markdown-it'
 import matter from 'gray-matter'
 import Token from 'markdown-it/lib/token'
+import { ParsedReadme } from '../types'
 
 const md = new MarkdownIt({ html: true })
 
@@ -23,7 +24,7 @@ const transformTokens = (outputTokens: Token[], token: Token): Token[] => {
   return outputTokens.concat(token)
 }
 
-const parseReadme = (readme: string) => {
+const parseReadme = (readme: string): ParsedReadme => {
   const { content: mdContent, data } = matter(readme.trim(), {
     excerpt: true,
   }) as { content: string; data: { [key: string]: string | undefined } }
