@@ -26,9 +26,12 @@ const transformTokens = (outputTokens: Token[], token: Token): Token[] => {
 const parseReadme = (readme: string) => {
   const { content: mdContent, data } = matter(readme.trim(), {
     excerpt: true,
-  }) as { content: string; data: { import?: string } }
+  }) as { content: string; data: { [key: string]: string | undefined } }
   const parsed = md.parse(mdContent, {}).reduce(transformTokens, [])
   const printed = md.renderer.render(parsed, {}, {})
+  if (!data.name) {
+    throw new Error('Pattern must have `name` in frontmatter')
+  }
   const template = `
 ${data.import ? 'import ' + data.import : ''}
 import { h } from 'preact'
@@ -36,13 +39,14 @@ import BookstandRendererPreact from 'bookstand-renderer-preact'
 
 const Template = () => (
   <div>
+    <h1>${data.name}</h1>
     ${printed.replace(/\n/g, '\n    ').trim()}
   </div>
 )
 
 export default Template
 `
-  return template
+  return { template, name: data.name }
 }
 
 export default parseReadme

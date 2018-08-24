@@ -6,9 +6,8 @@ test('parses README', () => {
   const parsed = parseReadme(md`
 ---
 import: Button from '.'
+name: Button
 ---
-
-# Button
 
 Normal button:
 
@@ -24,7 +23,8 @@ With \`href\`:
 <Button href="/asdf">Click Me</Button>
 ~~~
   `)
-  expect(parsed).toMatchInlineSnapshot(`
+  expect(parsed).toEqual({ name: 'Button', template: expect.any(String) })
+  expect(parsed.template).toMatchInlineSnapshot(`
 "
 import Button from '.'
 import { h } from 'preact'
@@ -52,4 +52,18 @@ const Template = () => (
 export default Template
 "
 `)
+})
+
+test('throws when name is not passed', () => {
+  expect(() =>
+    parseReadme(md`
+---
+asdf: 'hi'
+---
+
+blah
+    `),
+  ).toThrowErrorMatchingInlineSnapshot(
+    `"Pattern must have \`name\` in frontmatter"`,
+  )
 })
