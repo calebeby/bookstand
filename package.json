@@ -6,12 +6,12 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0",
-    "@babel/core": "7.0.1",
+    "@babel/cli": "7.1.0",
+    "@babel/core": "7.1.0",
     "@babel/plugin-external-helpers": "7.0.0",
-    "@babel/plugin-proposal-class-properties": "7.0.0",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/plugin-transform-react-jsx": "7.0.0",
-    "@babel/preset-env": "7.0.0",
+    "@babel/preset-env": "7.1.0",
     "@types/chokidar": "1.7.5",
     "@types/cosmiconfig": "5.0.3",
     "@types/globby": "8.0.0",
@@ -58,7 +58,7 @@
     ]
   },
   "dependencies": {
-    "@babel/preset-typescript": "7.0.0",
+    "@babel/preset-typescript": "7.1.0",
     "chokidar": "2.0.4",
     "cosmiconfig": "5.0.6",
     "globby": "8.0.1",
