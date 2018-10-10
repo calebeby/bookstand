@@ -27,7 +27,7 @@
     "postcss-preset-env": "6.0.6",
     "preact-router": "2.6.1",
     "prettier": "1.14.3",
-    "rollup-plugin-commonjs": "9.1.8",
+    "rollup-plugin-commonjs": "9.2.0",
     "rollup-plugin-copy": "0.2.3",
     "rollup-plugin-prettier": "0.4.0",
     "rollup-plugin-terser": "3.0.0",
