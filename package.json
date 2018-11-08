@@ -60,7 +60,7 @@
   "dependencies": {
     "@babel/preset-typescript": "7.1.0",
     "chokidar": "2.0.4",
-    "cosmiconfig": "5.0.6",
+    "cosmiconfig": "5.0.7",
     "globby": "8.0.1",
     "gray-matter": "4.0.1",
     "markdown-it": "8.4.2",
