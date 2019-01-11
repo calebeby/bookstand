@@ -62,7 +62,7 @@
     "chokidar": "2.0.4",
     "cosmiconfig": "5.0.6",
     "globby": "8.0.1",
-    "gray-matter": "4.0.1",
+    "gray-matter": "4.0.2",
     "markdown-it": "8.4.2",
     "preact": "8.3.1",
     "rollup": "0.66.2",
