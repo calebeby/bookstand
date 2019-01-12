@@ -17,7 +17,7 @@
     "@types/globby": "8.0.0",
     "@types/jest": "23.3.2",
     "@types/markdown-it": "0.0.5",
-    "autoprefixer": "9.1.5",
+    "autoprefixer": "9.4.5",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.6.0",
     "jest": "23.6.0",
